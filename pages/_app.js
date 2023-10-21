@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
-import { color } from "@chakra-ui/react";
-import ThreeDScene from "./ThreeDScene";
+
 export default function App({ Component, pageProps }) {
   return (
     <>
