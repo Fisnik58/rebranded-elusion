@@ -15,18 +15,17 @@ body {
   background-color: #000419;
 }
 
-.logo:hover{
+.logo:hover {
   transform: scale(0.96);
   transition: 0.3s;
 }
 
-.logo:not( :hover ){
+.logo:not(:hover) {
   transform: scale(1);
   transition: 0.3s;
 }
 
-
-.nav-item:hover{
+.nav-item:hover {
   opacity: 0.8;
   transition: 0.3;
   cursor: pointer;
@@ -85,29 +84,27 @@ body {
   gap: 10px;
 }
 
-
-
-@media (min-width:1201px) {
-  .custom-div-1{
+@media (min-width: 1201px) {
+  .custom-div-1 {
     padding-bottom: 80px;
   }
   .div-of-tech {
     display: flex;
     justify-content: start;
-   }
-   
+  }
 }
 @media (max-width: 1200px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
-  .tech-header,.tech-paragraph{
+  .tech-header,
+  .tech-paragraph {
     text-align: center;
   }
   .div-of-tech {
     display: flex;
-    justify-content: center;  }
-  
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -127,32 +124,35 @@ body {
   padding-top: 5px;
 }
 
-.partnership-div{
-  background-color: rgba(62,74,92,0.3);
-    border-radius: 16px;
-    border: solid 1px transparent;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-}
-
-.partnership-div img{
+.partnership-div {
+  background-color: rgba(62, 74, 92, 0.3);
+  border-radius: 16px;
+  border: solid 1px transparent;
+  cursor: pointer;
   display: flex;
   justify-content: center;
 }
 
-.grid-container-2{
+.partnership-div img {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container-2 {
   grid-row-gap: 20px;
   column-gap: 50px;
 }
 
-.partnership-div:hover{
-  background-image: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)),linear-gradient(33.82deg,#0076f3 18.34%,#61ecc2 77.9%,#fff3e4 90.22%);
-    background-origin: border-box;
-    background-clip: content-box,border-box;
-    box-shadow: 2px 1000px 1px #000419 inset;
+.partnership-div:hover {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(33.82deg, #0076f3 18.34%, #61ecc2 77.9%, #fff3e4 90.22%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #000419 inset;
 }
-
 
 .background-video {
   position: absolute;
@@ -200,9 +200,9 @@ body {
 .cool-input::placeholder {
   font-size: 14px;
 }
- .sub-tech{
+.sub-tech {
   margin-top: 50px;
- }
+}
 .cool-button {
   position: absolute;
   top: 50%; /* Vertically center the button */
@@ -212,7 +212,13 @@ body {
   background: transparent;
   padding: 0;
   border-radius: 100px;
-  background: linear-gradient(60.65deg,#0076f3 28%,#61ecc2 80.04%,#fff3e4 92%);  color: white;
+  background: linear-gradient(
+    60.65deg,
+    #0076f3 28%,
+    #61ecc2 80.04%,
+    #fff3e4 92%
+  );
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s;
   padding: 12px 31px;
@@ -222,25 +228,25 @@ body {
 .cool-button:hover {
   transition: 1s;
   opacity: 0.8;
- }
+}
 
- .cool-input:focus{
+.cool-input:focus {
   outline: none;
- }
- 
-.header-1{
+}
+
+.header-1 {
   font-size: 5.5rem;
 }
-.header-2{
+.header-2 {
   font-size: 4.375rem;
 }
-.header-3{
+.header-3 {
   font-size: 3.75rem;
 }
-.header-4{
+.header-4 {
   font-size: 5rem;
 }
-.header-5{
+.header-5 {
   font-size: 3.75rem;
 }
 
@@ -256,20 +262,20 @@ body {
     font-size: 3.5rem;
   }
 }
-@media (max-width:450px) {
-  .header-2{
+@media (max-width: 450px) {
+  .header-2 {
     font-size: 3rem;
   }
-  .form-container{
+  .form-container {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .cool-button{
+  .cool-button {
     right: 27px;
   }
 }
-@media (max-width:400px) {
-  video{
+@media (max-width: 400px) {
+  video {
     width: 350px;
   }
   .header-1,
@@ -278,12 +284,13 @@ body {
   .header-5 {
     font-size: 3rem;
   }
-  .header-2{
+  .header-2 {
     font-size: 2.5rem;
   }
-}@media (max-width:350px){
-  video{
-   width: 300px;
+}
+@media (max-width: 350px) {
+  video {
+    width: 300px;
   }
 }
 /* @media (max-width: 991px) {
@@ -328,51 +335,55 @@ body {
   }
 }  */
 
-
-@media (max-width:991px) {
-  
-.navbar{
-  z-index: 100000;
-}
-.expanded-menu {
-  background-image: linear-gradient(150deg,#1d2838 35%,rgba(21,29,41,.75));  
-  border-radius: 15px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 15px 0px;
-  
-}
-  .nav-item{
+@media (max-width: 991px) {
+  .navbar {
+    z-index: 100000;
+  }
+  .expanded-menu {
+    background-image: linear-gradient(
+      150deg,
+      #1d2838 35%,
+      rgba(21, 29, 41, 0.75)
+    );
+    border-radius: 15px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px 0px;
+  }
+  .nav-item {
     font-size: 18px;
-   padding-bottom: 5px;
+    padding-bottom: 5px;
     font-family: inter;
     padding-left: 35px;
-    color: rgba(216,223,233,.8);
-    
+    color: rgba(216, 223, 233, 0.8);
   }
-  .collapse{
+  .collapse {
     animation: fadeInDown;
     animation-duration: 0.5s;
-    overflow-y:hidden ;
+    overflow-y: hidden;
+    margin-top: 10px;
   }
-
 }
 
 
-.navbar-toggler{
-  background-color: lightblue;
+.navbar-toggler {
+  background-color: #1D2838;
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .nav-item {
-    color: #B3BAC5;
+    color: #b3bac5;
     font-size: 13px;
     font-family: zendot;
     padding-left: 10px;
     font-weight: lighter;
+  }
+  .navbar{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
 
@@ -386,7 +397,26 @@ body {
 .sticky-container {
   position: sticky;
   top: 0;
-  background-color: ; /* Change to your desired background color */
-  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  /* Add other styles here */
+  z-index: 1000; /* To ensure the shadow is above content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Pseudo-element to create the fading shadow effect */
+.sticky-container::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  height: 20px; /* Adjust the height of the shadow as needed */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  pointer-events: none; /* Ensure it doesn't interfere with content */
+  z-index: -1; /* Behind the content */
+}
+
+.sticky-container,
+.sticky-container::after {
+  border-bottom: none;
+}

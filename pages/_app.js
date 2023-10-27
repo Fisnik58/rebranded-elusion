@@ -33,8 +33,8 @@ export default function App({ Component, pageProps }) {
   };
   return (
     <>
-      
-  <div className="background-container">
+     
+  <div className="background-container" id="containerhome">
     <video autoPlay loop muted className="background-video">
       <source src="/vids/egg.mp4" type="video/mp4" />
       Your browser does not support the video tag.
@@ -42,7 +42,8 @@ export default function App({ Component, pageProps }) {
   </div>
 
 
-    <div className="container container-of-about-us sticky-container " id="containerhome" >
+   <div className="container-fluid sticky-container">
+   <div className="container container-of-about-us  "  >
     <nav
                 className={`navbar navbar-expand-lg navbar-light  ${
                   isNavbarOpen ? "show" : ""
@@ -75,7 +76,7 @@ export default function App({ Component, pageProps }) {
                     id="navbarNav"
                   >
                     <ul className="navbar-nav ml-auto ">
-                      <li className="nav-item li nav-item-0">
+                      <li className="nav-item li nav-item-0" >
                         <ScrollLink
                           className="nav-link Bozo scroll-link animated-element"
                           activeClass="active"
@@ -152,6 +153,7 @@ export default function App({ Component, pageProps }) {
               </nav>
       
     </div>
+   </div>
 
     <div
       style={{
@@ -462,6 +464,7 @@ export default function App({ Component, pageProps }) {
           <div className="container">
           <p style={{color:"#A2B3C6"}}>Copyright Elusion™ © 2022. All rights reserved</p>
           </div>
+          
     </>
   );
 }
