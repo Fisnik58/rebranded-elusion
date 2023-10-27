@@ -2,7 +2,10 @@
   font-family: zendot;
   src: url(../Syncopate-Bold.ttf);
 }
-
+@font-face {
+  font-family: inter;
+  src: url(../Inter-VariableFont_slnt\,wght.ttf);
+}
 @font-face {
   font-family: monsterat;
   src: url(../Montserrat-VariableFont_wght.ttf);
@@ -17,13 +20,12 @@ body {
   transition: 0.3s;
 }
 
-.nav-item {
-  color: white;
-  font-size: 13px;
-  font-family: zendot;
-  padding-left: 10px;
-  font-weight: lighter;
+.logo:not( :hover ){
+  transform: scale(1);
+  transition: 0.3s;
 }
+
+
 .nav-item:hover{
   opacity: 0.8;
   transition: 0.3;
@@ -160,7 +162,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.11;
+  opacity: 0.05;
 }
 .form-container {
   display: flex;
@@ -284,3 +286,107 @@ body {
    width: 300px;
   }
 }
+/* @media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: rgba(1, 4, 25, 0.95); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-collapse ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+  }
+  .nav-item{
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+  .nav-item a {
+    text-decoration: none;
+    color: white;
+  }
+}  */
+
+
+@media (max-width:991px) {
+  
+.navbar{
+  z-index: 100000;
+}
+.expanded-menu {
+  background-image: linear-gradient(150deg,#1d2838 35%,rgba(21,29,41,.75));  
+  border-radius: 15px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 15px 0px;
+  
+}
+  .nav-item{
+    font-size: 18px;
+   padding-bottom: 5px;
+    font-family: inter;
+    padding-left: 35px;
+    color: rgba(216,223,233,.8);
+    
+  }
+  .collapse{
+    animation: fadeInDown;
+    animation-duration: 0.5s;
+    overflow-y:hidden ;
+  }
+
+}
+
+
+.navbar-toggler{
+  background-color: lightblue;
+}
+
+@media (min-width:992px) {
+  .nav-item {
+    color: #B3BAC5;
+    font-size: 13px;
+    font-family: zendot;
+    padding-left: 10px;
+    font-weight: lighter;
+  }
+}
+
+/* .sticky-container {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent; 
+}  */
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  background-color: ; /* Change to your desired background color */
+  z-index: 1000;
+}
+
