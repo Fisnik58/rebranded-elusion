@@ -1,99 +1,207 @@
 import "@/styles/globals.css";
+import { useState } from "react";
+import { Link as ScrollLink } from 'react-scroll';
+import 'animate.css';
+
 
 export default function App({ Component, pageProps }) {
+  // JavaScript function to toggle the collapsed navbar
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  // Function to handle click on a navigation item
+  const handleNavItemClick = () => {
+    setIsNavbarOpen(false);
+  };
+
+  const [navbarBackgroundColor, setNavbarBackgroundColor] = useState(""); // Initial background color
+
+  // Rest of the code...
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    // Define the scroll threshold where the color change should start (in pixels)
+    const scrollThreshold = 30;
+
+    // Calculate the new background color based on the scroll position
+    const newBackgroundColor = scrollY > scrollThreshold ? "purple" : "#cb20ff";
+
+    // Update the navbar background color state
+    setNavbarBackgroundColor(newBackgroundColor);
+
+    // Update the class of the navbar based on the scroll position
+    const navbar = document.querySelector(".navbar");
+  };
   return (
     <>
-      <div>
-        <div className="background-container">
-          <video autoPlay loop muted className="background-video">
-            <source src="/vids/egg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      
+  <div className="background-container">
+    <video autoPlay loop muted className="background-video">
+      <source src="/vids/egg.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-        <div>
-          <div className="container container-of-about-us">
-            <nav className="navbar navbar-expand-lg navbar-light">
-              <div className="container">
-                <a className="navbar-brand" href="#">
-                  <img
-                    src="../elusionlogo.png"
-                    alt="Logo"
-                    width="70"
-                    className="logo"
-                  />
-                </a>
-                <button
-                  className="navbar-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#navbarNav"
-                  style={{ backgroundColor: "darkgray" }}
-                >
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-              </div>
 
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                  <li className="nav-item">Home</li>
-                  <li className="nav-item">Developers</li>
-                  <li className="nav-item">Roadmap</li>
-                  <li className="nav-item">Bridge</li>
-                  <li className="nav-item">Tokenomics</li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <div
-            style={{
-              height: "90vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div className="container">
-              <div className="row d-flex justify-content-center align-items-center">
-                <h1
-                  className="text-white text-center header-1"
-                >
-                  The Next Gen Layer 2 <br />
-                  Blockchain
-                </h1>
-              </div>
-              <div className="row">
-                <h5
-                  className="text-center"
-                  style={{ color: "#616D7E", paddingTop: "20px" }}
-                >
-                  Scaling any existing EVM Blockchain
-                </h5>
-              </div>
-              <div
-                class="d-flex justify-content-center align-items-center"
-                style={{ paddingTop: "40px" }}
+    <div className="container container-of-about-us sticky-container " id="containerhome" >
+    <nav
+                className={`navbar navbar-expand-lg navbar-light  ${
+                  isNavbarOpen ? "show" : ""
+                }`}
+                style={{ backgroundColor: navbarBackgroundColor }}
               >
-                <a
-                  href="https://t.me/layerium"
-                  target="_blank"
-                  class="button w-button"
-                >
-                  Join Telegram
-                </a>
-              </div>
-            </div>
-          </div>
-          ]{" "}
+                <div className="container">
+                  <a className="navbar-brand" href="#">
+                    <img
+                      src="../elusionlogo.png"
+                      width="70"
+                      className="logo"
+                      alt="Logo"
+                    />
+                  </a>
+                  <button
+                    className="navbar-toggler"
+                    type="button"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    onClick={() => setIsNavbarOpen((prevState) => !prevState)}
+                  >
+                    <span className="navbar-toggler-icon white-toggler-icon"></span>
+                  </button>
+                  <div
+                    className={`collapse navbar-collapse expanded-menu ${
+                      isNavbarOpen ? "show" : ""
+                    }`}
+                    id="navbarNav"
+                  >
+                    <ul className="navbar-nav ml-auto ">
+                      <li className="nav-item li nav-item-0">
+                        <ScrollLink
+                          className="nav-link Bozo scroll-link animated-element"
+                          activeClass="active"
+                          to="containerhome"
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          onClick={handleNavItemClick}
+                        >
+                          <span style={{ color: "white" }}>Home</span>
+                        </ScrollLink>
+                      </li>
+                      <li className="nav-item li animated-element nav-item-1">
+                        <ScrollLink
+                          className="nav-link Bozo scroll-link"
+                          activeClass="active"
+                          to="containerroadmap"
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          onClick={handleNavItemClick}
+                        >
+                          <span style={{ color: "white" }}>Roadmap</span>
+                        </ScrollLink>
+                      </li>
+                      <li className="nav-item li animated-element nav-item-2">
+                        <ScrollLink
+                          className="nav-link Bozo scroll-link"
+                          activeClass="active"
+                          to="containerofbridge"
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          onClick={handleNavItemClick}
+                        >
+                          <span style={{ color: "white" }}>Bridge</span>
+                        </ScrollLink>
+                      </li>
+                      <li className="nav-item li animated-element nav-item-3">
+                        <ScrollLink
+                          className="nav-link Bozo scroll-link"
+                          activeClass="active"
+                          to="containerofpartnerships"
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          onClick={handleNavItemClick}
+                        >
+                          <span style={{ color: "white" }}>Partnership</span>
+                        </ScrollLink>
+                      </li>
+                      <li className="nav-item li nav-item-4">
+                        <ScrollLink
+                          className="nav-link Bozo scroll-link"
+                          activeClass="active"
+                          to="containerofdevelopers"
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          onClick={handleNavItemClick}
+                        >
+                          <span style={{ color: "white" }}>Developers</span>
+                        </ScrollLink>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+      
+    </div>
+
+    <div
+      style={{
+        height: "90vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        
+      }}
+    >
+      <div className="container">
+        <div className="row d-flex justify-content-center align-items-center">
+          <h1 className="text-white text-center header-1">
+            The Next Gen Layer 2 <br />
+            Blockchain
+          </h1>
+        </div>
+        <div className="row d-flex justify-content-center">
+          <h5
+            className="text-center"
+            style={{ color: "#616D7E", paddingTop: "20px" }}
+          >
+            Scaling any existing EVM Blockchain
+          </h5>
+        </div>
+        <div
+          class="d-flex justify-content-center align-items-center"
+          style={{ paddingTop: "40px" }}
+        >
+          <a
+            href="https://t.me/layerium"
+            target="_blank"
+            class="button w-button"
+          >
+            Join Telegram
+          </a>
         </div>
       </div>
+    </div>
 
-      <div className="container">
+
+
+
+      <div className="container" id="containerroadmap">
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             paddingTop: "100px",
+            paddingBottom:"100px"
           }}
         >
           <h4 className="text-center subtitle">Solving the Problem</h4>
@@ -230,16 +338,17 @@ export default function App({ Component, pageProps }) {
         </div>
       </div>
 
-      <div className="container ">
-        <div className="row d-flex" style={{ paddingTop: "200px" }}>
-          <div className="col-xl-6 col-lg-12">
-            <div className="div-of-tech">
-              <h4 className=" subtitle">Technology</h4>
+      <div className="container " >
+        <div className="row d-flex" style={{ paddingTop: "100px" }} id="containerofbridge">
+          <div className="col-xl-6 col-lg-12" >
+            <div className="div-of-tech" >
+              <h4 className=" subtitle" >Technology</h4>
             </div>
             <div>
               <h2
                 className=" text-white tech-header header-3"
                 style={{ color: "#616D7E" }}
+               
               >
                 ADVANCED LAYER 2 TAKING BLOCKCHAIN TO ANOTHER LEVEL
               </h2>
@@ -264,7 +373,7 @@ export default function App({ Component, pageProps }) {
           </div>
         </div>
       </div>
-      <div className="" style={{ paddingTop: "200px", paddingBottom: "200px" }}>
+      <div className="" style={{ paddingTop: "200px", paddingBottom: "200px" }} id="containerofpartnerships">
         <div
           className="container"
           style={{ display: "flex", justifyContent: "center" }}
@@ -303,7 +412,7 @@ export default function App({ Component, pageProps }) {
         </div>
       </div>
 
-      <div className="container " style={{paddingBottom:"150px"}}>
+      <div className="container " style={{paddingBottom:"150px"}} id="containerofdevelopers">
         <div className="row d-flex">
           <div
             style={{ display: "flex", justifyContent: "center" }}
@@ -315,7 +424,7 @@ export default function App({ Component, pageProps }) {
           </div>
           <div className="col-xl-6 col-lg-12">
             <div className="div-of-tech">
-              <h4 className=" subtitle sub-tech">Technology</h4>
+              <h4 className=" subtitle sub-tech">Developers</h4>
             </div>
             <div>
               <h2
