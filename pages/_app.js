@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link as ScrollLink } from 'react-scroll';
 import 'animate.css';
 
@@ -30,11 +30,39 @@ export default function App({ Component, pageProps }) {
 
     // Update the class of the navbar based on the scroll position
     const navbar = document.querySelector(".navbar");
+
+    
   };
+ 
+  useEffect(() => {
+    const images = document.querySelectorAll(".fadein");
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.4, // Adjust this threshold based on your preference
+    };
+
+    const observer = new IntersectionObserver(fadeInOnScroll, observerOptions);
+    images.forEach((img) => observer.observe(img));
+
+    return () => observer.disconnect();
+  });
+
+  const fadeInOnScroll = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }, 200); // Adjust the delay time as needed
+      }
+    });
+  };
+
   return (
     <>
      
-  <div className="background-container" id="containerhome">
+  <div className="background-container " id="containerhome" >
     <video autoPlay loop muted className="background-video">
       <source src="/vids/egg.mp4" type="video/mp4" />
       Your browser does not support the video tag.
@@ -164,7 +192,7 @@ export default function App({ Component, pageProps }) {
         
       }}
     >
-      <div className="container">
+      <div className="container fadein">
         <div className="row d-flex justify-content-center align-items-center">
           <h1 className="text-white text-center header-1">
             The Next Gen Layer 2 <br />
@@ -206,17 +234,17 @@ export default function App({ Component, pageProps }) {
             paddingBottom:"100px"
           }}
         >
-          <h4 className="text-center subtitle">Solving the Problem</h4>
+          <h4 className="text-center subtitle fadein">Solving the Problem</h4>
         </div>
         <h1
           style={{ paddingBottom: "80px" }}
-          className="text-white text-center header-2"
+          className="text-white text-center header-2 fadein"
         >
           The existing Layer 2 can only solve the scalability problem on One
           Blockchain
         </h1>
-        <div className="grid-container">
-          <div className="custom-div custom-div-1">
+        <div className="grid-container ">
+          <div className="custom-div custom-div-1 fadein">
             <div className="main-icon">
               <div class="icon-feature-bg">
                 <img
@@ -236,7 +264,7 @@ export default function App({ Component, pageProps }) {
               within any EVM Blockchain
             </p>{" "}
           </div>
-          <div className="custom-div">
+          <div className="custom-div fadein">
             <div className="main-icon">
               <div class="icon-feature-bg">
                 <img
@@ -256,7 +284,7 @@ export default function App({ Component, pageProps }) {
               Security remains at the same level as the existing Layer 2{" "}
             </p>
           </div>
-          <div className="custom-div">
+          <div className="custom-div fadein">
             <div className="main-icon">
               <div class="icon-feature-bg">
                 <img
@@ -276,7 +304,7 @@ export default function App({ Component, pageProps }) {
               users{" "}
             </p>
           </div>
-          <div className="custom-div">
+          <div className="custom-div fadein">
             <div className="main-icon">
               <div class="icon-feature-bg">
                 <img
@@ -296,7 +324,7 @@ export default function App({ Component, pageProps }) {
               speeds that can compete with the existing Layer 2{" "}
             </p>
           </div>
-          <div className="custom-div">
+          <div className="custom-div fadein">
             <div className="main-icon">
               <div class="icon-feature-bg">
                 <img
@@ -317,7 +345,7 @@ export default function App({ Component, pageProps }) {
               data avalability
             </p>
           </div>
-          <div className="custom-div">
+          <div className="custom-div fadein">
             <div className="main-icon">
               <div class="icon-feature-bg">
                 <img
@@ -340,7 +368,7 @@ export default function App({ Component, pageProps }) {
         </div>
       </div>
 
-      <div className="container " >
+      <div className="container  fadein" >
         <div className="row d-flex" style={{ paddingTop: "100px" }} id="containerofbridge">
           <div className="col-xl-6 col-lg-12" >
             <div className="div-of-tech" >
@@ -380,11 +408,11 @@ export default function App({ Component, pageProps }) {
           className="container"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <h4 className="subtitle text-center">Supported by</h4>
+          <h4 className="subtitle text-center fadein">Supported by</h4>
         </div>
         <div className="">
           <h1
-            className="text-center text-white partnership-header header-4"
+            className=" fadein text-center text-white partnership-header header-4 "
             style={{ paddingBottom: "50px" }}
           >
             Meet our Partnership
@@ -392,29 +420,29 @@ export default function App({ Component, pageProps }) {
         </div>
         <div className="container">
           <div className="grid-container grid-container-2">
-            <div className="partnership-div">
+            <div className="partnership-div fadein">
               <img src="/img/comingsoon.png" />
             </div>
-            <div className="partnership-div">
+            <div className="partnership-div fadein">
               <img src="/img/comingsoon.png" />
             </div>
-            <div className="partnership-div">
+            <div className="partnership-div fadein">
               <img src="/img/comingsoon.png" />
             </div>
-            <div className="partnership-div">
+            <div className="partnership-div fadein">
               <img src="/img/comingsoon.png" />
             </div>
-            <div className="partnership-div">
+            <div className="partnership-div fadein">
               <img src="/img/comingsoon.png" />
             </div>
-            <div className="partnership-div">
+            <div className="partnership-div fadein">
               <img src="/img/comingsoon.png" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container " style={{paddingBottom:"150px"}} id="containerofdevelopers">
+      <div className="container fadein" style={{paddingBottom:"150px"}} id="containerofdevelopers ">
         <div className="row d-flex">
           <div
             style={{ display: "flex", justifyContent: "center" }}
@@ -449,19 +477,19 @@ export default function App({ Component, pageProps }) {
       </div>
       <hr style={{color:"#A2B3C6",height:"2px"}}/>
       <div style={{ display: "flex", justifyContent: "center" ,paddingTop:"50px",paddingBottom:"50px"}}>
-        <img src="../elusion.png" style={{ width: "250px" }} />
+        <img src="../elusion.png" style={{ width: "250px" }}  className="fadein"/>
       </div>
           <div className="d-flex justify-content-center">
-          <div class="form-container">
+          <div class="form-container fadein">
   <input type="text" placeholder="Subscribe with your email" class="cool-input" />
   <button type="submit" class="cool-button">Ok</button>
 </div>
           </div>
     <br/>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center fadein">
           <hr style={{height:"3px",backgroundColor:"#203042",width:"90%"}}/>
           </div>
-          <div className="container">
+          <div className="container fadein">
           <p style={{color:"#A2B3C6"}}>Copyright Elusion™ © 2022. All rights reserved</p>
           </div>
           

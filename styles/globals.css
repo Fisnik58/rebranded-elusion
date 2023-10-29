@@ -1,14 +1,33 @@
 @font-face {
   font-family: zendot;
-  src: url(../Syncopate-Bold.ttf);
+  src: url(../public/fonts/Syncopate-Bold.ttf);
 }
 @font-face {
   font-family: inter;
-  src: url(../Inter-VariableFont_slnt\,wght.ttf);
+  src: url(..//public/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 @font-face {
   font-family: monsterat;
-  src: url(../Montserrat-VariableFont_wght.ttf);
+  src: url(../public/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #000625;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 body {
@@ -84,39 +103,10 @@ body {
   gap: 10px;
 }
 
-@media (min-width: 1201px) {
-  .custom-div-1 {
-    padding-bottom: 80px;
-  }
-  .div-of-tech {
-    display: flex;
-    justify-content: start;
-  }
-}
-@media (max-width: 1200px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .tech-header,
-  .tech-paragraph {
-    text-align: center;
-  }
-  .div-of-tech {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 .main-icon {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .custom-div p {
@@ -167,7 +157,7 @@ body {
 .form-container {
   display: flex;
   align-items: center;
-  position: relative; /* Create a positioning context for the input and button */
+  position: relative;
   width: 400px;
 }
 .form-container {
@@ -205,9 +195,9 @@ body {
 }
 .cool-button {
   position: absolute;
-  top: 50%; /* Vertically center the button */
-  right: 7px; /* Adjust the right margin as needed */
-  transform: translateY(-50%); /* Center the button vertically */
+  top: 50%;
+  right: 7px;
+  transform: translateY(-50%);
   border: none;
   background: transparent;
   padding: 0;
@@ -248,6 +238,77 @@ body {
 }
 .header-5 {
   font-size: 3.75rem;
+}
+
+.navbar-toggler {
+  background-color: #1d2838;
+}
+.sticky-container {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sticky-container::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sticky-container,
+.sticky-container::after {
+  border-bottom: none;
+}
+
+.fadein {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.show.fadein {
+  opacity: 1;
+}
+
+.navbar {
+  animation: flash;
+  animation-duration: 2s;
+}
+
+@media (min-width: 1201px) {
+  .custom-div-1 {
+    padding-bottom: 80px;
+  }
+  .div-of-tech {
+    display: flex;
+    justify-content: start;
+  }
+}
+@media (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tech-header,
+  .tech-paragraph {
+    text-align: center;
+  }
+  .div-of-tech {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 515px) {
@@ -293,47 +354,6 @@ body {
     width: 300px;
   }
 }
-/* @media (max-width: 991px) {
-  .navbar-collapse {
-    background-color: rgba(1, 4, 25, 0.95); 
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .navbar-collapse ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 24px;
-  }
-  .nav-item{
-    font-size: 25px;
-    padding-bottom: 10px;
-  }
-  .nav-item a {
-    text-decoration: none;
-    color: white;
-  }
-}  */
 
 @media (max-width: 991px) {
   .navbar {
@@ -368,11 +388,6 @@ body {
   }
 }
 
-
-.navbar-toggler {
-  background-color: #1D2838;
-}
-
 @media (min-width: 992px) {
   .nav-item {
     color: #b3bac5;
@@ -381,42 +396,8 @@ body {
     padding-left: 10px;
     font-weight: lighter;
   }
-  .navbar{
+  .navbar {
     padding-top: 0px;
     padding-bottom: 0px;
   }
-}
-
-/* .sticky-container {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: transparent; 
-}  */
-
-.sticky-container {
-  position: sticky;
-  top: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  /* Add other styles here */
-  z-index: 1000; /* To ensure the shadow is above content */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Pseudo-element to create the fading shadow effect */
-.sticky-container::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  height: 20px; /* Adjust the height of the shadow as needed */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-  pointer-events: none; /* Ensure it doesn't interfere with content */
-  z-index: -1; /* Behind the content */
-}
-
-.sticky-container,
-.sticky-container::after {
-  border-bottom: none;
 }
