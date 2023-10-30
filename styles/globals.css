@@ -282,6 +282,26 @@ body {
   animation-duration: 2s;
 }
 
+.card{
+  background-color:  rgba(62, 74, 92, 0.3);
+
+  border-radius: 15px;
+}
+.card img{
+  border-top-left-radius:15px ;
+  border-top-right-radius: 15px;
+}
+
+.card-body h2,p{
+  color: white;
+}
+
+.card-body h2{
+  color: #3183FF !important;
+} 
+
+
+
 @media (min-width: 1201px) {
   .custom-div-1 {
     padding-bottom: 80px;
@@ -401,3 +421,31 @@ body {
     padding-bottom: 0px;
   }
 }
+
+.grid-container-3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on larger screens */
+  gap: 16px; /* Adjust the gap as needed */
+ 
+}
+
+@media (max-width: 991px) {
+  .grid-container-3 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container-3 {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center; 
+    align-items: center;
+    width: 300px;
+  }
+  .head-card{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+
