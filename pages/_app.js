@@ -74,7 +74,7 @@ export default function App({ Component, pageProps }) {
             style={{ backgroundColor: navbarBackgroundColor }}
           >
             <div className="container">
-              <a className="navbar-brand" href="#">
+              <a className="navbar-brand">
                 <img
                   src="../elusionlogo.png"
                   width="70"
@@ -203,6 +203,7 @@ export default function App({ Component, pageProps }) {
             <h1 className="text-white text-center header-1">
               The Next Gen Layer 2 <br />
               Blockchain
+            
             </h1>
           </div>
           <div className="row d-flex justify-content-center">
