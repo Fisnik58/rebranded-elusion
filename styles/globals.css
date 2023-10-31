@@ -34,6 +34,10 @@ body {
   background-color: #000419;
 }
 
+.logo{
+  cursor: pointer;
+}
+
 .logo:hover {
   transform: scale(0.96);
   transition: 0.3s;
@@ -43,6 +47,16 @@ body {
   transform: scale(1);
   transition: 0.3s;
 }
+
+.cool-button:hover{
+  scale: 0.97;
+  transition: 0.3s;
+}
+.cool-button:not(:hover){
+  scale: 1;
+  transition: 0.3s;
+}
+
 
 .nav-item:hover {
   opacity: 0.8;
@@ -278,7 +292,7 @@ body {
 }
 
 .navbar {
-  animation: flash;
+  animation: fadeIn;
   animation-duration: 2s;
 }
 
